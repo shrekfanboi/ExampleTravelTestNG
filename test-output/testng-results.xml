@@ -1,101 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="15" passed="11" failed="4" skipped="0">
+<testng-results ignored="0" total="15" passed="12" failed="3" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-08-21T12:13:50 IST" name="Suite" finished-at="2022-08-21T12:14:41 IST" duration-ms="51178">
+  <suite started-at="2022-08-22T10:25:01 IST" name="Suite" finished-at="2022-08-22T10:25:23 IST" duration-ms="21943">
     <groups>
     </groups>
-    <test started-at="2022-08-21T12:13:50 IST" name="BookFlightTest" finished-at="2022-08-21T12:14:12 IST" duration-ms="22172">
-      <class name="com.automation.Test.BookingTest">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.automation.Test.BookingTest@75329a49]" started-at="2022-08-21T12:13:50 IST" name="beforeTest" finished-at="2022-08-21T12:13:53 IST" duration-ms="3165" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.automation.Test.BookingTest@75329a49]" started-at="2022-08-21T12:13:53 IST" name="beforeClass" finished-at="2022-08-21T12:13:55 IST" duration-ms="1597" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method signature="turnOffWifi()[pri:1, instance:com.automation.Test.BookingTest@75329a49]" started-at="2022-08-21T12:13:55 IST" name="turnOffWifi" finished-at="2022-08-21T12:14:05 IST" duration-ms="10009" status="FAIL">
-          <exception class="org.testng.internal.thread.ThreadTimeoutException">
-            <message>
-              <![CDATA[Method com.automation.Test.BookingTest.turnOffWifi() didn't finish within the time-out 10000]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.internal.thread.ThreadTimeoutException: Method com.automation.Test.BookingTest.turnOffWifi() didn't finish within the time-out 10000
-at org.testng.internal.MethodInvocationHelper.invokeWithTimeoutWithNewExecutor(MethodInvocationHelper.java:384)
-at org.testng.internal.MethodInvocationHelper.invokeWithTimeout(MethodInvocationHelper.java:283)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:604)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at com.automation.Test.NGRunner.main(NGRunner.java:74)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.internal.thread.ThreadTimeoutException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- turnOffWifi -->
-        <test-method signature="loadSearchPage()[pri:0, instance:com.automation.Test.BookingTest@75329a49]" started-at="2022-08-21T12:14:06 IST" name="loadSearchPage" finished-at="2022-08-21T12:14:09 IST" depends-on-methods="com.automation.Test.BookingTest.turnOffWifi" duration-ms="3123" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loadSearchPage -->
-        <test-method signature="verifyBooking()[pri:0, instance:com.automation.Test.BookingTest@75329a49]" started-at="2022-08-21T12:14:09 IST" name="verifyBooking" finished-at="2022-08-21T12:14:12 IST" depends-on-methods="com.automation.Test.BookingTest.loadSearchPage" duration-ms="2991" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyBooking -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.automation.Test.BookingTest@75329a49]" started-at="2022-08-21T12:14:12 IST" name="afterTest" finished-at="2022-08-21T12:14:12 IST" duration-ms="449" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-      </class> <!-- com.automation.Test.BookingTest -->
-    </test> <!-- BookFlightTest -->
-    <test started-at="2022-08-21T12:14:12 IST" name="registerTest" finished-at="2022-08-21T12:14:19 IST" duration-ms="6292">
+    <test started-at="2022-08-22T10:25:01 IST" name="RegisterTest" finished-at="2022-08-22T10:25:05 IST" duration-ms="3836">
       <class name="com.automation.Test.RegisterTest">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.automation.Test.RegisterTest@3e92efc3]" started-at="2022-08-21T12:14:12 IST" name="beforeTest" finished-at="2022-08-21T12:14:14 IST" duration-ms="1537" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.automation.Test.RegisterTest@16a0ee18]" started-at="2022-08-22T10:25:01 IST" name="beforeTest" finished-at="2022-08-22T10:25:02 IST" duration-ms="1360" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.automation.Test.RegisterTest@3e92efc3]" started-at="2022-08-21T12:14:14 IST" name="beforeClass" finished-at="2022-08-21T12:14:15 IST" duration-ms="749" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.automation.Test.RegisterTest@16a0ee18]" started-at="2022-08-22T10:25:02 IST" name="beforeClass" finished-at="2022-08-22T10:25:03 IST" duration-ms="509" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="registerWithValidData()[pri:1, instance:com.automation.Test.RegisterTest@3e92efc3]" started-at="2022-08-21T12:14:15 IST" name="registerWithValidData" finished-at="2022-08-21T12:14:18 IST" duration-ms="3572" status="PASS">
+        <test-method signature="registerWithValidData()[pri:1, instance:com.automation.Test.RegisterTest@16a0ee18]" started-at="2022-08-22T10:25:03 IST" name="registerWithValidData" finished-at="2022-08-22T10:25:04 IST" duration-ms="1660" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- registerWithValidData -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.automation.Test.RegisterTest@3e92efc3]" started-at="2022-08-21T12:14:18 IST" name="afterTest" finished-at="2022-08-21T12:14:19 IST" duration-ms="419" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.automation.Test.RegisterTest@16a0ee18]" started-at="2022-08-22T10:25:04 IST" name="tearDown" finished-at="2022-08-22T10:25:05 IST" duration-ms="153" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterTest -->
+        </test-method> <!-- tearDown -->
       </class> <!-- com.automation.Test.RegisterTest -->
-    </test> <!-- registerTest -->
-    <test started-at="2022-08-21T12:14:19 IST" name="loginTest" finished-at="2022-08-21T12:14:30 IST" duration-ms="10675">
+    </test> <!-- RegisterTest -->
+    <test started-at="2022-08-22T10:25:05 IST" name="LoginTest" finished-at="2022-08-22T10:25:09 IST" duration-ms="4817">
       <class name="com.automation.Test.LoginTest">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.automation.Test.LoginTest@41e36e46]" started-at="2022-08-21T12:14:19 IST" name="beforeTest" finished-at="2022-08-21T12:14:20 IST" duration-ms="1555" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.automation.Test.LoginTest@31fa1761]" started-at="2022-08-22T10:25:05 IST" name="beforeTest" finished-at="2022-08-22T10:25:05 IST" duration-ms="732" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.automation.Test.LoginTest@41e36e46]" started-at="2022-08-21T12:14:20 IST" name="beforeClass" finished-at="2022-08-21T12:14:21 IST" duration-ms="715" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.automation.Test.LoginTest@31fa1761]" started-at="2022-08-22T10:25:05 IST" name="beforeClass" finished-at="2022-08-22T10:25:06 IST" duration-ms="346" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="verifyLoginWithInValidData(java.lang.String,java.lang.String)[pri:1, instance:com.automation.Test.LoginTest@41e36e46]" started-at="2022-08-21T12:14:21 IST" name="verifyLoginWithInValidData" data-provider="loginProvider" finished-at="2022-08-21T12:14:22 IST" duration-ms="1243" status="FAIL">
+        <test-method signature="verifyLoginWithInValidData(java.lang.String,java.lang.String)[pri:1, instance:com.automation.Test.LoginTest@31fa1761]" started-at="2022-08-22T10:25:06 IST" name="verifyLoginWithInValidData" data-provider="loginProvider" finished-at="2022-08-22T10:25:07 IST" duration-ms="840" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -143,14 +83,16 @@ at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
 at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
 at org.testng.TestNG.runSuites(TestNG.java:1063)
 at org.testng.TestNG.run(TestNG.java:1031)
-at com.automation.Test.NGRunner.main(NGRunner.java:74)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLoginWithInValidData -->
-        <test-method signature="verifyLoginWithInValidData(java.lang.String,java.lang.String)[pri:1, instance:com.automation.Test.LoginTest@41e36e46]" started-at="2022-08-21T12:14:23 IST" name="verifyLoginWithInValidData" data-provider="loginProvider" finished-at="2022-08-21T12:14:23 IST" duration-ms="734" status="FAIL">
+        <test-method signature="verifyLoginWithInValidData(java.lang.String,java.lang.String)[pri:1, instance:com.automation.Test.LoginTest@31fa1761]" started-at="2022-08-22T10:25:07 IST" name="verifyLoginWithInValidData" data-provider="loginProvider" finished-at="2022-08-22T10:25:07 IST" duration-ms="352" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -198,14 +140,16 @@ at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
 at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
 at org.testng.TestNG.runSuites(TestNG.java:1063)
 at org.testng.TestNG.run(TestNG.java:1031)
-at com.automation.Test.NGRunner.main(NGRunner.java:74)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLoginWithInValidData -->
-        <test-method signature="verifyLoginWithInValidData(java.lang.String,java.lang.String)[pri:1, instance:com.automation.Test.LoginTest@41e36e46]" started-at="2022-08-21T12:14:24 IST" name="verifyLoginWithInValidData" data-provider="loginProvider" finished-at="2022-08-21T12:14:25 IST" duration-ms="805" status="FAIL">
+        <test-method signature="verifyLoginWithInValidData(java.lang.String,java.lang.String)[pri:1, instance:com.automation.Test.LoginTest@31fa1761]" started-at="2022-08-22T10:25:07 IST" name="verifyLoginWithInValidData" data-provider="loginProvider" finished-at="2022-08-22T10:25:08 IST" duration-ms="354" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -253,66 +197,96 @@ at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
 at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
 at org.testng.TestNG.runSuites(TestNG.java:1063)
 at org.testng.TestNG.run(TestNG.java:1031)
-at com.automation.Test.NGRunner.main(NGRunner.java:74)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLoginWithInValidData -->
-        <test-method signature="verifyLoginWithValidData()[pri:2, instance:com.automation.Test.LoginTest@41e36e46]" started-at="2022-08-21T12:14:25 IST" name="verifyLoginWithValidData" finished-at="2022-08-21T12:14:27 IST" duration-ms="2656" status="PASS">
+        <test-method signature="verifyLoginWithValidData()[pri:2, instance:com.automation.Test.LoginTest@31fa1761]" started-at="2022-08-22T10:25:08 IST" name="verifyLoginWithValidData" finished-at="2022-08-22T10:25:09 IST" duration-ms="1103" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLoginWithValidData -->
-        <test-method signature="verifyLogout()[pri:0, instance:com.automation.Test.LoginTest@41e36e46]" started-at="2022-08-21T12:14:27 IST" name="verifyLogout" description="verify logout" finished-at="2022-08-21T12:14:28 IST" depends-on-methods="com.automation.Test.LoginTest.verifyLoginWithValidData" duration-ms="359" status="PASS">
+        <test-method signature="verifyLogout()[pri:0, instance:com.automation.Test.LoginTest@31fa1761]" started-at="2022-08-22T10:25:09 IST" name="verifyLogout" description="verify logout" finished-at="2022-08-22T10:25:09 IST" depends-on-methods="com.automation.Test.LoginTest.verifyLoginWithValidData" duration-ms="115" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLogout -->
-        <test-method signature="verifyResetPassword()[pri:0, instance:com.automation.Test.LoginTest@41e36e46]" started-at="2022-08-21T12:14:28 IST" name="verifyResetPassword" description="verify password" finished-at="2022-08-21T12:14:28 IST" depends-on-methods="com.automation.Test.LoginTest.verifyLogout" duration-ms="473" status="PASS">
+        <test-method signature="verifyResetPassword()[pri:0, instance:com.automation.Test.LoginTest@31fa1761]" started-at="2022-08-22T10:25:09 IST" name="verifyResetPassword" description="verify password" finished-at="2022-08-22T10:25:09 IST" depends-on-methods="com.automation.Test.LoginTest.verifyLogout" duration-ms="219" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyResetPassword -->
-        <test-method signature="verifySignUpLink()[pri:0, instance:com.automation.Test.LoginTest@41e36e46]" started-at="2022-08-21T12:14:28 IST" name="verifySignUpLink" description="verify signup" finished-at="2022-08-21T12:14:29 IST" depends-on-methods="com.automation.Test.LoginTest.verifyLogout" duration-ms="856" status="PASS">
+        <test-method signature="verifySignUpLink()[pri:0, instance:com.automation.Test.LoginTest@31fa1761]" started-at="2022-08-22T10:25:09 IST" name="verifySignUpLink" description="verify signup" finished-at="2022-08-22T10:25:09 IST" depends-on-methods="com.automation.Test.LoginTest.verifyLogout" duration-ms="162" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySignUpLink -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.automation.Test.LoginTest@41e36e46]" started-at="2022-08-21T12:14:29 IST" name="afterTest" finished-at="2022-08-21T12:14:30 IST" duration-ms="399" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.automation.Test.LoginTest@31fa1761]" started-at="2022-08-22T10:25:09 IST" name="tearDown" finished-at="2022-08-22T10:25:09 IST" duration-ms="169" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterTest -->
+        </test-method> <!-- tearDown -->
       </class> <!-- com.automation.Test.LoginTest -->
-    </test> <!-- loginTest -->
-    <test started-at="2022-08-21T12:14:30 IST" name="searchFlightTest" finished-at="2022-08-21T12:14:41 IST" duration-ms="11315">
+    </test> <!-- LoginTest -->
+    <test started-at="2022-08-22T10:25:10 IST" name="SearchFlightTest" finished-at="2022-08-22T10:25:16 IST" duration-ms="6719">
       <class name="com.automation.Test.SearchFlightTest">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.automation.Test.SearchFlightTest@481a996b]" started-at="2022-08-21T12:14:30 IST" name="beforeTest" finished-at="2022-08-21T12:14:31 IST" duration-ms="1547" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.automation.Test.SearchFlightTest@27f981c6]" started-at="2022-08-22T10:25:10 IST" name="beforeTest" finished-at="2022-08-22T10:25:10 IST" duration-ms="729" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.automation.Test.SearchFlightTest@481a996b]" started-at="2022-08-21T12:14:31 IST" name="beforeClass" finished-at="2022-08-21T12:14:32 IST" duration-ms="681" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.automation.Test.SearchFlightTest@27f981c6]" started-at="2022-08-22T10:25:10 IST" name="beforeClass" finished-at="2022-08-22T10:25:11 IST" duration-ms="343" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="BasicSearch()[pri:1, instance:com.automation.Test.SearchFlightTest@481a996b]" started-at="2022-08-21T12:14:32 IST" name="BasicSearch" finished-at="2022-08-21T12:14:34 IST" duration-ms="1896" status="PASS">
+        <test-method signature="BasicSearch()[pri:1, instance:com.automation.Test.SearchFlightTest@27f981c6]" started-at="2022-08-22T10:25:11 IST" name="BasicSearch" finished-at="2022-08-22T10:25:12 IST" duration-ms="1554" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BasicSearch -->
-        <test-method signature="ParameterizedSearch()[pri:2, instance:com.automation.Test.SearchFlightTest@481a996b]" started-at="2022-08-21T12:14:34 IST" name="ParameterizedSearch" finished-at="2022-08-21T12:14:36 IST" duration-ms="1794" status="PASS">
+        <test-method signature="ParameterizedSearch()[pri:2, instance:com.automation.Test.SearchFlightTest@27f981c6]" started-at="2022-08-22T10:25:12 IST" name="ParameterizedSearch" finished-at="2022-08-22T10:25:13 IST" duration-ms="997" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ParameterizedSearch -->
-        <test-method signature="RoundTripSearch()[pri:3, instance:com.automation.Test.SearchFlightTest@481a996b]" started-at="2022-08-21T12:14:36 IST" name="RoundTripSearch" finished-at="2022-08-21T12:14:38 IST" duration-ms="2774" status="PASS">
+        <test-method signature="RoundTripSearch()[pri:3, instance:com.automation.Test.SearchFlightTest@27f981c6]" started-at="2022-08-22T10:25:13 IST" name="RoundTripSearch" finished-at="2022-08-22T10:25:15 IST" duration-ms="1570" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- RoundTripSearch -->
-        <test-method signature="MultiCitySearch()[pri:4, instance:com.automation.Test.SearchFlightTest@481a996b]" started-at="2022-08-21T12:14:38 IST" name="MultiCitySearch" finished-at="2022-08-21T12:14:41 IST" duration-ms="2278" status="PASS">
+        <test-method signature="MultiCitySearch()[pri:4, instance:com.automation.Test.SearchFlightTest@27f981c6]" started-at="2022-08-22T10:25:15 IST" name="MultiCitySearch" finished-at="2022-08-22T10:25:16 IST" duration-ms="1350" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- MultiCitySearch -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.automation.Test.SearchFlightTest@481a996b]" started-at="2022-08-21T12:14:41 IST" name="afterTest" finished-at="2022-08-21T12:14:41 IST" duration-ms="326" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.automation.Test.SearchFlightTest@27f981c6]" started-at="2022-08-22T10:25:16 IST" name="tearDown" finished-at="2022-08-22T10:25:16 IST" duration-ms="163" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterTest -->
+        </test-method> <!-- tearDown -->
       </class> <!-- com.automation.Test.SearchFlightTest -->
-    </test> <!-- searchFlightTest -->
+    </test> <!-- SearchFlightTest -->
+    <test started-at="2022-08-22T10:25:16 IST" name="BookTest" finished-at="2022-08-22T10:25:23 IST" duration-ms="6281">
+      <class name="com.automation.Test.BookingTest">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.automation.Test.BookingTest@2d710f1a]" started-at="2022-08-22T10:25:16 IST" name="beforeTest" finished-at="2022-08-22T10:25:17 IST" duration-ms="740" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.automation.Test.BookingTest@2d710f1a]" started-at="2022-08-22T10:25:17 IST" name="beforeClass" finished-at="2022-08-22T10:25:17 IST" duration-ms="329" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="turnOffWifi()[pri:1, instance:com.automation.Test.BookingTest@2d710f1a]" started-at="2022-08-22T10:25:17 IST" name="turnOffWifi" finished-at="2022-08-22T10:25:20 IST" duration-ms="2568" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- turnOffWifi -->
+        <test-method signature="loadSearchPage()[pri:0, instance:com.automation.Test.BookingTest@2d710f1a]" started-at="2022-08-22T10:25:20 IST" name="loadSearchPage" finished-at="2022-08-22T10:25:21 IST" depends-on-methods="com.automation.Test.BookingTest.turnOffWifi" duration-ms="1236" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadSearchPage -->
+        <test-method signature="verifyBooking()[pri:0, instance:com.automation.Test.BookingTest@2d710f1a]" started-at="2022-08-22T10:25:21 IST" name="verifyBooking" finished-at="2022-08-22T10:25:22 IST" depends-on-methods="com.automation.Test.BookingTest.loadSearchPage" duration-ms="1250" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyBooking -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.automation.Test.BookingTest@2d710f1a]" started-at="2022-08-22T10:25:22 IST" name="tearDown" finished-at="2022-08-22T10:25:23 IST" duration-ms="146" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.automation.Test.BookingTest -->
+    </test> <!-- BookTest -->
   </suite> <!-- Suite -->
 </testng-results>

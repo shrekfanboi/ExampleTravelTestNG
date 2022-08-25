@@ -125,7 +125,6 @@ public class SearchFlightPage extends BasePage {
 		String submitPath = DEPARTPICKER + "//button[contains(text(),'Ok')]";
 		new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath(datePath))).click();
 		new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath(submitPath))).click();
-
 	}
 
 	public void setDepartureDateField(String date) {

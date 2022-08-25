@@ -6,8 +6,9 @@
       <class name="com.automation.Test.BookingTest">
         <methods>
           <include name="beforeClass"/>
+          <include name="loadSearchPage"/>
           <include name="turnOffWifi"/>
-          <include name="afterTest"/>
+          <include name="tearDown"/>
           <include name="beforeTest"/>
         </methods>
       </class> <!-- com.automation.Test.BookingTest -->

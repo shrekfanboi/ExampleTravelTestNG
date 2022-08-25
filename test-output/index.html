@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 4 failed tests</span>
+      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>[unset file name]</span>
+                    <span>C:\Users\Mainak.mondal\eclipse-workspace\Projects\ExampleTravel\config\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">15 methods, 4 failed,   11 passed</span>
+                    <span class="method-stats">15 methods, 3 failed,   12 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -104,17 +104,12 @@
                     <div class="method-list-content failed suite-Suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.automation.Test.BookingTest" class="method navigator-link" hash-for-method="turnOffWifi">turnOffWifi</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.automation.Test.LoginTest" class="method navigator-link" hash-for-method="verifyLoginWithInValidData(user1, pass1)">verifyLoginWithInValidData(user1, pass1)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="com.automation.Test.LoginTest" class="method navigator-link" hash-for-method="verifyLoginWithInValidData(user2, pass2)">verifyLoginWithInValidData(user2, pass2)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.automation.Test.LoginTest" class="method navigator-link" hash-for-method="verifyLoginWithInValidData(user1, pass1)">verifyLoginWithInValidData(user1, pass1)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -163,6 +158,11 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.automation.Test.BookingTest" class="method navigator-link" hash-for-method="turnOffWifi">turnOffWifi</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="com.automation.Test.BookingTest" class="method navigator-link" hash-for-method="verifyBooking">verifyBooking</a> <!-- method navigator-link -->
                       </span>
                       <br/>
@@ -206,20 +206,6 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyLoginWithInValidData(user2, pass2)">
-                  </a> <!-- verifyLoginWithInValidData(user2, pass2) -->
-                  <span class="method-name">verifyLoginWithInValidData</span>
-                  <span class="parameters">(user2, pass2)</span>
-                  <div class="stack-trace">java.lang.AssertionError: Login Unsuccesful expected [false] but found [true]
-	at com.automation.Test.LoginTest.verifyLoginWithInValidData(LoginTest.java:33)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at com.automation.Test.NGRunner.main(NGRunner.java:74)
-... Removed 27 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
                   <a name="verifyLoginWithInValidData(user1, pass1)">
                   </a> <!-- verifyLoginWithInValidData(user1, pass1) -->
                   <span class="method-name">verifyLoginWithInValidData</span>
@@ -227,8 +213,20 @@
                   <div class="stack-trace">java.lang.AssertionError: Login Unsuccesful expected [false] but found [true]
 	at com.automation.Test.LoginTest.verifyLoginWithInValidData(LoginTest.java:33)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at com.automation.Test.NGRunner.main(NGRunner.java:74)
-... Removed 27 stack frames
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyLoginWithInValidData(user2, pass2)">
+                  </a> <!-- verifyLoginWithInValidData(user2, pass2) -->
+                  <span class="method-name">verifyLoginWithInValidData</span>
+                  <span class="parameters">(user2, pass2)</span>
+                  <div class="stack-trace">java.lang.AssertionError: Login Unsuccesful expected [false] but found [true]
+	at com.automation.Test.LoginTest.verifyLoginWithInValidData(LoginTest.java:33)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 30 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -241,33 +239,41 @@
                   <div class="stack-trace">java.lang.AssertionError: Login Unsuccesful expected [false] but found [true]
 	at com.automation.Test.LoginTest.verifyLoginWithInValidData(LoginTest.java:33)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at com.automation.Test.NGRunner.main(NGRunner.java:74)
-... Removed 27 stack frames
+... Removed 30 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Suite-class-failed -->
-          <div class="suite-Suite-class-failed">
+          <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
+              <img src="passed.png"/>
               <span class="class-name">com.automation.Test.BookingTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+                  <a name="loadSearchPage">
+                  </a> <!-- loadSearchPage -->
+                  <span class="method-name">loadSearchPage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="turnOffWifi">
                   </a> <!-- turnOffWifi -->
                   <span class="method-name">turnOffWifi</span>
-                  <div class="stack-trace">org.testng.internal.thread.ThreadTimeoutException: Method com.automation.Test.BookingTest.turnOffWifi() didn&apos;t finish within the time-out 10000
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at com.automation.Test.NGRunner.main(NGRunner.java:74)
-... Removed 21 stack frames
-</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyBooking">
+                  </a> <!-- verifyBooking -->
+                  <span class="method-name">verifyBooking</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-failed -->
+          </div> <!-- suite-Suite-class-passed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -306,28 +312,6 @@
                   <span class="method-name">verifySignUpLink</span>
                   <em>
 (verify signup)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
-          <div class="suite-Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.automation.Test.BookingTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="loadSearchPage">
-                  </a> <!-- loadSearchPage -->
-                  <span class="method-name">loadSearchPage</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyBooking">
-                  </a> <!-- verifyBooking -->
-                  <span class="method-name">verifyBooking</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -386,35 +370,36 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\Mainak.mondal\eclipse-workspace\Projects\ExampleTravel\config\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite name=&quot;Suite&quot;&gt;
+&lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;com.automation.Generic.Listener&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;BookFlightTest&quot;&gt;
-    &lt;classes&gt;
-      &lt;class name=&quot;com.automation.Test.BookingTest&quot;/&gt;
-    &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- BookFlightTest --&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;registerTest&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;RegisterTest&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.automation.Test.RegisterTest&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- registerTest --&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;loginTest&quot;&gt;
+  &lt;/test&gt; &lt;!-- RegisterTest --&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;LoginTest&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.automation.Test.LoginTest&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- loginTest --&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;searchFlightTest&quot;&gt;
+  &lt;/test&gt; &lt;!-- LoginTest --&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;SearchFlightTest&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.automation.Test.SearchFlightTest&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- searchFlightTest --&gt;
+  &lt;/test&gt; &lt;!-- SearchFlightTest --&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;BookTest&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.automation.Test.BookingTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- BookTest --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -426,16 +411,16 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">BookFlightTest (1 class)</span>
+                <span class="test-name">RegisterTest (1 class)</span>
               </li>
               <li>
-                <span class="test-name">registerTest (1 class)</span>
+                <span class="test-name">LoginTest (1 class)</span>
               </li>
               <li>
-                <span class="test-name">loginTest (1 class)</span>
+                <span class="test-name">SearchFlightTest (1 class)</span>
               </li>
               <li>
-                <span class="test-name">searchFlightTest (1 class)</span>
+                <span class="test-name">BookTest (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -465,68 +450,68 @@ data.addRows(15);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'turnOffWifi')
 data.setCell(0, 2, 'com.automation.Test.BookingTest')
-data.setCell(0, 3, 10009);
+data.setCell(0, 3, 2568);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'registerWithValidData')
 data.setCell(1, 2, 'com.automation.Test.RegisterTest')
-data.setCell(1, 3, 3572);
+data.setCell(1, 3, 1660);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'loadSearchPage')
-data.setCell(2, 2, 'com.automation.Test.BookingTest')
-data.setCell(2, 3, 3123);
+data.setCell(2, 1, 'RoundTripSearch')
+data.setCell(2, 2, 'com.automation.Test.SearchFlightTest')
+data.setCell(2, 3, 1570);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'verifyBooking')
-data.setCell(3, 2, 'com.automation.Test.BookingTest')
-data.setCell(3, 3, 2991);
+data.setCell(3, 1, 'BasicSearch')
+data.setCell(3, 2, 'com.automation.Test.SearchFlightTest')
+data.setCell(3, 3, 1554);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'RoundTripSearch')
+data.setCell(4, 1, 'MultiCitySearch')
 data.setCell(4, 2, 'com.automation.Test.SearchFlightTest')
-data.setCell(4, 3, 2774);
+data.setCell(4, 3, 1350);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'verifyLoginWithValidData')
-data.setCell(5, 2, 'com.automation.Test.LoginTest')
-data.setCell(5, 3, 2656);
+data.setCell(5, 1, 'verifyBooking')
+data.setCell(5, 2, 'com.automation.Test.BookingTest')
+data.setCell(5, 3, 1250);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'MultiCitySearch')
-data.setCell(6, 2, 'com.automation.Test.SearchFlightTest')
-data.setCell(6, 3, 2278);
+data.setCell(6, 1, 'loadSearchPage')
+data.setCell(6, 2, 'com.automation.Test.BookingTest')
+data.setCell(6, 3, 1236);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'BasicSearch')
-data.setCell(7, 2, 'com.automation.Test.SearchFlightTest')
-data.setCell(7, 3, 1896);
+data.setCell(7, 1, 'verifyLoginWithValidData')
+data.setCell(7, 2, 'com.automation.Test.LoginTest')
+data.setCell(7, 3, 1103);
 data.setCell(8, 0, 8)
 data.setCell(8, 1, 'ParameterizedSearch')
 data.setCell(8, 2, 'com.automation.Test.SearchFlightTest')
-data.setCell(8, 3, 1794);
+data.setCell(8, 3, 997);
 data.setCell(9, 0, 9)
 data.setCell(9, 1, 'verifyLoginWithInValidData')
 data.setCell(9, 2, 'com.automation.Test.LoginTest')
-data.setCell(9, 3, 1243);
+data.setCell(9, 3, 840);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'verifySignUpLink')
+data.setCell(10, 1, 'verifyLoginWithInValidData')
 data.setCell(10, 2, 'com.automation.Test.LoginTest')
-data.setCell(10, 3, 856);
+data.setCell(10, 3, 354);
 data.setCell(11, 0, 11)
 data.setCell(11, 1, 'verifyLoginWithInValidData')
 data.setCell(11, 2, 'com.automation.Test.LoginTest')
-data.setCell(11, 3, 805);
+data.setCell(11, 3, 352);
 data.setCell(12, 0, 12)
-data.setCell(12, 1, 'verifyLoginWithInValidData')
+data.setCell(12, 1, 'verifyResetPassword')
 data.setCell(12, 2, 'com.automation.Test.LoginTest')
-data.setCell(12, 3, 734);
+data.setCell(12, 3, 219);
 data.setCell(13, 0, 13)
-data.setCell(13, 1, 'verifyResetPassword')
+data.setCell(13, 1, 'verifySignUpLink')
 data.setCell(13, 2, 'com.automation.Test.LoginTest')
-data.setCell(13, 3, 473);
+data.setCell(13, 3, 162);
 data.setCell(14, 0, 14)
 data.setCell(14, 1, 'verifyLogout')
 data.setCell(14, 2, 'com.automation.Test.LoginTest')
-data.setCell(14, 3, 359);
+data.setCell(14, 3, 115);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 35 seconds</span>
+              <span class="suite-total-time">Total running time: 15 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -552,131 +537,129 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.automation.Test.BookingTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.automation.Test.RegisterTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">beforeTest</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">3202 ms</span>
-              </div> <!-- configuration-class before -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">turnOffWifi</span>
-                <span class="method-start">4818 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">loadSearchPage</span>
-                <span class="method-start">15277 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">verifyBooking</span>
-                <span class="method-start">18404 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-test after">
-                <span class="method-name">afterTest</span>
-                <span class="method-start">21396 ms</span>
-              </div> <!-- configuration-test after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.automation.Test.RegisterTest</div> <!-- chronological-class-name -->
-              <div class="configuration-test before">
-                <span class="method-name">beforeTest</span>
-                <span class="method-start">22166 ms</span>
-              </div> <!-- configuration-test before -->
-              <div class="configuration-class before">
-                <span class="method-name">beforeClass</span>
-                <span class="method-start">23704 ms</span>
+                <span class="method-start">1369 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">registerWithValidData</span>
-                <span class="method-start">24453 ms</span>
+                <span class="method-start">1884 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
-                <span class="method-name">afterTest</span>
-                <span class="method-start">28026 ms</span>
+                <span class="method-name">tearDown</span>
+                <span class="method-start">3547 ms</span>
               </div> <!-- configuration-test after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.automation.Test.LoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">beforeTest</span>
-                <span class="method-start">28658 ms</span>
+                <span class="method-start">3827 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">30215 ms</span>
+                <span class="method-start">4562 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">verifyLoginWithInValidData(user1, pass1)</span>
-                <span class="method-start">30934 ms</span>
+                <span class="method-start">4911 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">verifyLoginWithInValidData(user2, pass2)</span>
-                <span class="method-start">32469 ms</span>
+                <span class="method-start">5912 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">verifyLoginWithInValidData(user3, pass3)</span>
-                <span class="method-start">33509 ms</span>
+                <span class="method-start">6398 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verifyLoginWithValidData</span>
-                <span class="method-start">34571 ms</span>
+                <span class="method-start">6863 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verifyLogout</span>
-                <span class="method-start">37228 ms</span>
+                <span class="method-start">7969 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verifyResetPassword</span>
-                <span class="method-start">37589 ms</span>
+                <span class="method-start">8085 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verifySignUpLink</span>
-                <span class="method-start">38064 ms</span>
+                <span class="method-start">8306 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
-                <span class="method-name">afterTest</span>
-                <span class="method-start">38920 ms</span>
+                <span class="method-name">tearDown</span>
+                <span class="method-start">8468 ms</span>
               </div> <!-- configuration-test after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.automation.Test.SearchFlightTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">beforeTest</span>
-                <span class="method-start">39549 ms</span>
+                <span class="method-start">8723 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">41098 ms</span>
+                <span class="method-start">9453 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">BasicSearch</span>
-                <span class="method-start">41779 ms</span>
+                <span class="method-start">9796 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">ParameterizedSearch</span>
-                <span class="method-start">43676 ms</span>
+                <span class="method-start">11351 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">RoundTripSearch</span>
-                <span class="method-start">45471 ms</span>
+                <span class="method-start">12349 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">MultiCitySearch</span>
-                <span class="method-start">48246 ms</span>
+                <span class="method-start">13920 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
-                <span class="method-name">afterTest</span>
-                <span class="method-start">50525 ms</span>
+                <span class="method-name">tearDown</span>
+                <span class="method-start">15271 ms</span>
+              </div> <!-- configuration-test after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.automation.Test.BookingTest</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">beforeTest</span>
+                <span class="method-start">15534 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="configuration-class before">
+                <span class="method-name">beforeClass</span>
+                <span class="method-start">16276 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">turnOffWifi</span>
+                <span class="method-start">16605 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">loadSearchPage</span>
+                <span class="method-start">19174 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyBooking</span>
+                <span class="method-start">20412 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-test after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">21662 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
