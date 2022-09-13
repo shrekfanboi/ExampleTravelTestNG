@@ -1,2 +1,4 @@
 /target/
 /driver/
+/.settings
+/test-output
