@@ -1,5 +1,6 @@
 package com.automation.Pages;
 
+import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -26,13 +27,13 @@ public class BookFlightPage extends BasePage{
 	private WebElement finishPayBtn;
 	
 	public void clickBookNow() {
-		new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfAllElements(bookNowBtn)).get(0).click();
+		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOfAllElements(bookNowBtn)).get(0).click();
 	}
 
 	public void proceedBooking() {
 		JavascriptExecutor js = (JavascriptExecutor) this.driver;
 		js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
-		new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[text()='Continue']")))
+		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[text()='Continue']")))
 				.click();
 	}
 	public void viewFlightDetails() {
@@ -56,7 +57,7 @@ public class BookFlightPage extends BasePage{
 		}
 	}
 	public void addMeal() {
-		WebElement ele = new WebDriverWait(driver,10).until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Select your prefered meal(s)')]/../..//div[@class='meal-body']//a[contains(@class,'meal-counter')]")));
+		WebElement ele = new WebDriverWait(driver,Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Select your prefered meal(s)')]/../..//div[@class='meal-body']//a[contains(@class,'meal-counter')]")));
 //		System.out.println(ele.getText());
 //		act.moveToElement(ele).click().perform();
 		//new WebDriverWait(driver, 10).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@class='simply_ts-logo w-100']")));

@@ -2,6 +2,8 @@ package com.automation.Pages;
 
 import static org.testng.Assert.assertNotEquals;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -46,7 +48,7 @@ public class LoginPage extends BasePage {
 		this.passwordField.sendKeys(password);
 	}
 	public void clickLogin() {
-		new WebDriverWait(driver,10).until(ExpectedConditions.elementToBeClickable(loginBtn)).click();
+		new WebDriverWait(driver,Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(loginBtn)).click();
 	}
 	public void clickLogout() {
 		this.logoutBtn.click();
@@ -59,7 +61,7 @@ public class LoginPage extends BasePage {
 	}
 	
 	public void assertForgotPasswordForm() {
-		WebElement submitBtn = new WebDriverWait(this.driver,10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[contains(text(),'Submit')]")));
+		WebElement submitBtn = new WebDriverWait(this.driver,Duration.ofSeconds(10)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[contains(text(),'Submit')]")));
 		assertNotEquals(submitBtn.getAttribute("display"),"none");		//check display property of submit button 
 
 	}

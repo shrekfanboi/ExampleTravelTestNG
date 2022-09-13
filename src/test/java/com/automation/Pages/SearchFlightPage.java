@@ -1,14 +1,17 @@
 package com.automation.Pages;
 
 import java.text.DateFormatSymbols;
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -65,18 +68,29 @@ public class SearchFlightPage extends BasePage {
 	public void redirect() {
 		if (!this.driver.getCurrentUrl().contains("travel.testsigma.com")) {
 //			System.out.println("switching tabs");
+			JavascriptExecutor js = (JavascriptExecutor)driver;
+			js.executeScript("arguments[0].scrollIntoView()", this.navBtn);
 			this.navBtn.click();
 			DriverUtils.switchTab();
 		}
 	}
 
 	public void setFlightType(FlightType type) {
+		JavascriptExecutor  js = (JavascriptExecutor)this.driver;
 		if (type.equals(FlightType.OneWay))
-			this.oneWay.click();
-		else if (type.equals(FlightType.RoundTrip))
+		{
+			js.executeScript("arguments[0].scrollIntoViewIfNeeded();window.scrollBy(0,-80);", this.oneWay);
+			this.oneWay.click();			
+		}
+		else if (type.equals(FlightType.RoundTrip)) {
+			js.executeScript("arguments[0].scrollIntoViewIfNeeded();window.scrollBy(0,-80);", this.roundTrip);
+			System.out.println(this.roundTrip.isDisplayed());
 			this.roundTrip.click();
-		else
+		}
+		else {
+			js.executeScript("arguments[0].scrollIntoViewIfNeeded();window.scrollBy(0,-80);", this.multiCity);
 			this.multiCity.click();
+		}
 	}
 
 	private String resolveDate(String date) {
@@ -92,7 +106,7 @@ public class SearchFlightPage extends BasePage {
 
 	public void setDepartureCitiesField(String city) {
 		this.departFromField.click();
-		List<WebElement> cities = new WebDriverWait(this.driver, 10)
+		List<WebElement> cities = new WebDriverWait(this.driver, Duration.ofSeconds(10))
 				.until(ExpectedConditions.presenceOfAllElementsLocatedBy(
 						By.xpath("//span[@id='departure_cities']/..//a[contains(@class,'dropdown-item')]")));
 		cities.stream().filter(element -> element.getText().equals(city)).findFirst().get().click();
@@ -106,7 +120,7 @@ public class SearchFlightPage extends BasePage {
 
 	public void setArrivalCitiesField(String city) {
 		this.arriveAtField.click();
-		List<WebElement> cities = new WebDriverWait(this.driver, 10)
+		List<WebElement> cities = new WebDriverWait(this.driver, Duration.ofSeconds(10))
 				.until(ExpectedConditions.presenceOfAllElementsLocatedBy(
 						By.xpath("//span[@id='arraival_cities']/..//a[contains(@class,'dropdown-item')]")));
 		cities.stream().filter(element -> element.getText().equals(city)).findFirst().get().click();
@@ -123,8 +137,8 @@ public class SearchFlightPage extends BasePage {
 		String datePath = DEPARTPICKER
 				+ "//button[@data-year='%s'][@data-month='%s'][@data-day='%s']".formatted(year, month, day);
 		String submitPath = DEPARTPICKER + "//button[contains(text(),'Ok')]";
-		new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath(datePath))).click();
-		new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath(submitPath))).click();
+		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(By.xpath(datePath))).click();
+		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(By.xpath(submitPath))).click();
 	}
 
 	public void setDepartureDateField(String date) {
@@ -134,12 +148,17 @@ public class SearchFlightPage extends BasePage {
 	}
 
 	public void setReturnDateField(String year, String month, String day) {
-		this.returnOnField.click();
+		try {
+			this.returnOnField.click();
+		}
+		catch(ElementClickInterceptedException e) {
+			new Actions(driver).moveToElement(this.returnOnField).click().perform();
+		}
 		String datePath = RETURNPICKER
 				+ "//button[@data-year='%s'][@data-month='%s'][@data-day='%s']".formatted(year, month, day);
 		String submitPath = RETURNPICKER + "//button[contains(text(),'Ok')]";
-		new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath(datePath))).click();
-		new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath(submitPath))).click();
+		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(By.xpath(datePath))).click();
+		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(By.xpath(submitPath))).click();
 
 	}
 
@@ -150,8 +169,13 @@ public class SearchFlightPage extends BasePage {
 	}
 
 	public void setPassengerAndClassField(TravelClass tclass) {
-		this.travelClassField.click();
-		WebElement travelClassList = new WebDriverWait(this.driver, 10)
+		try {
+			this.travelClassField.click();			
+		}
+		catch(ElementClickInterceptedException e) {
+			new Actions(driver).moveToElement(this.travelClassField).click().perform();			
+		}
+		WebElement travelClassList = new WebDriverWait(this.driver, Duration.ofSeconds(10))
 				.until(ExpectedConditions.visibilityOfElementLocated(
 						By.xpath("//p[contains(text(),'CHOOSE TRAVEL CLASS')]/following-sibling::ul")));
 		String xpath = "//li[text()='%s']";
@@ -164,7 +188,7 @@ public class SearchFlightPage extends BasePage {
 	}
 
 	public static int getSearchResultsLength(WebDriver driver) {
-		return new WebDriverWait(driver, 10)
+		return new WebDriverWait(driver, Duration.ofSeconds(10))
 				.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//a[text()='Book Now']"))).size();
 	}
 

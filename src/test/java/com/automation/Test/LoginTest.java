@@ -42,10 +42,9 @@ public class LoginTest extends BaseTest{
 		System.out.println("Running Login Test with valid data");
 		LoginPage lp = new LoginPage();
 		lp.goToLoginPage();
-		lp.enterUsername(DriverUtils.ReadExcelData("./data/sample.xlsx", "Sheet1", 1, 0));
-		lp.enterPassword(DriverUtils.ReadExcelData("./data/sample.xlsx", "Sheet1", 1, 1));
+		lp.enterUsername(DriverUtils.ReadExcelData("./src/test/resources/testData/sample.xlsx", "Sheet1", 1, 0));
+		lp.enterPassword(DriverUtils.ReadExcelData("./src/test/resources/testData/sample.xlsx", "Sheet1", 1, 1));
 		lp.clickLogin();
-//		assertEquals(DriverUtils.getDriver().getCurrentUrl(),"https://examples.testsigma.com/?username=admin&pass=12345");
 		assertFalse(DriverUtils.getDriver().getCurrentUrl().contains("login"), "Login Unsuccesful");
 }
 	/**

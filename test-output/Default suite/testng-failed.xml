@@ -3,15 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.automation.Test.BookingTest">
+      <class name="com.automation.Test.SearchFlightTest">
         <methods>
+          <include name="MultiCitySearch"/>
+          <include name="setupBeforeSuit"/>
           <include name="beforeClass"/>
-          <include name="loadSearchPage"/>
-          <include name="turnOffWifi"/>
+          <include name="flushProperties"/>
+          <include name="ParameterizedSearch"/>
           <include name="tearDown"/>
           <include name="beforeTest"/>
+          <include name="RoundTripSearch"/>
+          <include name="BasicSearch"/>
         </methods>
-      </class> <!-- com.automation.Test.BookingTest -->
+      </class> <!-- com.automation.Test.SearchFlightTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,11 +1,15 @@
 package com.automation.Pages;
 
 import java.io.File;
+import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * POM Class for Register Page
@@ -93,6 +97,7 @@ public class RegisterPage extends BasePage{
 	}
 	public void enterName(String str)
 	{
+		new WebDriverWait(driver,Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(this.Fullname));
 		Fullname.sendKeys(str);
 	}
 	public void enterEmail(String str)
@@ -117,10 +122,22 @@ public class RegisterPage extends BasePage{
 	 */
 	public void selectAge(String age)
 	{
-		if(age.equals("young")) new Actions(this.driver).moveToElement(ageYoung).click().perform();
-		else if(age.equals(" middle")) new Actions(this.driver).moveToElement(ageMiddle).click().perform();
-		else if(age.equals("old")) new Actions(this.driver).moveToElement(ageOld).click().perform();
-		else throw new IllegalArgumentException("Not a valid age");
+		new WebDriverWait(this.driver,Duration.ofSeconds(10)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//b[text()='Age Group']/../../div")));
+		if(age.equals("young")) {
+//			new WebDriverWait(driver,Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(ageYoung));
+			new Actions(this.driver).moveToElement(ageYoung).click().perform();			
+		} 
+		else if(age.equals(" middle")) {
+//			new WebDriverWait(driver,Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(ageMiddle));
+			new Actions(this.driver).moveToElement(ageMiddle).click().perform();
+		}
+		else if(age.equals("old")) {
+//			new WebDriverWait(driver,Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(ageOld));
+			new Actions(this.driver).moveToElement(ageOld).click().perform();
+			}
+		else {
+			throw new IllegalArgumentException("Not a valid age");
+		}
 //		age.click();
 	}
 	/**
@@ -129,6 +146,7 @@ public class RegisterPage extends BasePage{
 	 */
 	public void selectGender(String gender)
 	{
+		new WebDriverWait(this.driver,Duration.ofSeconds(10)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//b[text()='Gender']/../../div")));
 		if(gender.equals("male")) new Actions(this.driver).moveToElement(genderMale).click().perform();
 		else if(gender.equals("female")) new Actions(this.driver).moveToElement(genderFemale).click().perform();
 		else throw new IllegalArgumentException("Not a valid gender");
@@ -140,6 +158,7 @@ public class RegisterPage extends BasePage{
 	 */
 	public void selectemp(String status)
 	{
+		new WebDriverWait(this.driver,Duration.ofSeconds(10)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//b[text()='Employment Status']/../../div")));
 		if(status.equals("studying")) new Actions(this.driver).moveToElement(empstudy).click().perform();
 		else if(status.equals("working")) new Actions(this.driver).moveToElement(empwork).click().perform();
 		else if(status.equals("retired")) new Actions(this.driver).moveToElement(empretired).click().perform();

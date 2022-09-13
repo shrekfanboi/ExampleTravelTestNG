@@ -19,7 +19,8 @@ public class Listener implements ITestListener {
 	}
 	@Override
 	public void onStart(ITestContext context) {
-		System.out.println("Test "+context.getName()+" started");
+		if(context.getName().contains("_")) System.out.println("Test "+context.getName().split("_")[0]+" started");
+		else  System.out.println("Test "+context.getName()+" started");
 		try {
 			ScreenRecorderUtil.startRecording("myRecording");
 		} catch (Exception e) {
@@ -28,8 +29,8 @@ public class Listener implements ITestListener {
 	}
 	@Override
 	public void onFinish(ITestContext context) {
-		// TODO Auto-generated method stub
-		System.out.println("Test "+context.getName()+" finished");
+		if(context.getName().contains("_")) System.out.println("Test "+context.getName().split("_")[0]+" finished");
+		else System.out.println("Test "+context.getName()+" finished");
 		try {
 			ScreenRecorderUtil.stopRecording();
 		} catch (Exception e) {
@@ -43,6 +44,7 @@ public class Listener implements ITestListener {
 	@Override
 	public void onTestFailure(ITestResult result) {
 		System.out.println("Test Case "+result.getName()+" has failed");
+		System.out.println(result.getThrowable().getMessage());
 		DriverUtils.CaptureScreenShot();
 	}
 }

@@ -2,8 +2,6 @@ package com.automation.Test;
 
 import static org.testng.Assert.assertEquals;
 
-import java.util.Scanner;
-
 import org.testng.annotations.Test;
 
 import com.automation.Generic.DriverUtils;
@@ -31,26 +29,16 @@ public class BookingTest extends BaseTest{
 		sp.viewBookingSummary();
 	}
 	
-	/**
-	 *This method is used to trigger rerunning of loadSearchPage Test
-	 * Within 10 sec, turning off internet will cause loadSearchPage to rerun
-	 */
-	@Test(timeOut = 10000,priority=1)
-	public void turnOffWifi() {
-		Scanner sc =new Scanner(System.in);
-		System.out.println("Turn off your internet and enter a key to proceed ");
-		sc.next();
-		sc.close();
-	}
-	
+
 	
 	/**
 	 * This method is used to load the search flight page.
 	 * If page did not load, if attempts to refresh the page 10 times.
+	 * @throws InterruptedException 
 	 * @see https://testng.org/doc/documentation-main.html#rerunning
 	 */
-	@Test(retryAnalyzer = RetryAnalyzer.class,dependsOnMethods = "turnOffWifi",alwaysRun = true)
-	public void loadSearchPage() {
+	@Test(retryAnalyzer = RetryAnalyzer.class,alwaysRun = true)
+	public void loadSearchPage() throws InterruptedException {
 		new SearchFlightPage().redirect();
 		DriverUtils.getDriver().navigate().refresh();
 		assertEquals(DriverUtils.getDriver().getCurrentUrl(), "https://travel.testsigma.com/");

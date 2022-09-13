@@ -12,15 +12,9 @@ import com.automation.Pages.SearchFlightPage.TravelClass;
 
 
 public class SearchFlightTest extends BaseTest{
-//	private String depCity;
-//	private String arrCity;
-//	private TravelClass tclass;
-//	
-//	public SearchFlightTest(String dcity,String arrcity,TravelClass tclass) {
-//		this.depCity = dcity;
-//		this.arrCity = arrcity;
-//		this.tclass = tclass;
-//	}
+	
+	
+
 	
 	@Test(priority=1)
 	public void BasicSearch() {
@@ -34,11 +28,12 @@ public class SearchFlightTest extends BaseTest{
 	}
 	
 	@Test(priority=2)
-	public void ParameterizedSearch() {
+	public void ParameterizedSearch() throws InterruptedException {
 		SearchFlightPage sp = new SearchFlightPage();
+		sp.redirect();
 		sp.setDepartureCitiesField("London");
 		sp.setArrivalCitiesField("Los Angeles");
-		sp.setDepartureDateField("2022", "7", "25");
+		sp.setDepartureDateField("2022", "8", "20");
 		sp.setPassengerAndClassField(TravelClass.Economy);
 		sp.clickSearchButton();
 		int num_search = SearchFlightPage.getSearchResultsLength(DriverUtils.getDriver());
@@ -48,11 +43,12 @@ public class SearchFlightTest extends BaseTest{
 	@Test(priority=3)
 	public void RoundTripSearch() {
 		SearchFlightPage sp = new SearchFlightPage();
+		sp.redirect();
 		sp.setFlightType(FlightType.RoundTrip);
 		sp.setDepartureCitiesField("Washington, D.C.");
 		sp.setArrivalCitiesField("New York City");
-		sp.setDepartureDateField("2022", "7", "28");
-		sp.setReturnDateField("2022", "7", "31");
+		sp.setDepartureDateField("2022", "8", "14");
+		sp.setReturnDateField("2022", "8", "26");
 		sp.setPassengerAndClassField(TravelClass.First_Class);
 		sp.clickSearchButton();
 		int num_search = SearchFlightPage.getSearchResultsLength(DriverUtils.getDriver());
@@ -60,14 +56,16 @@ public class SearchFlightTest extends BaseTest{
 		assertEquals(num_search>0, true);
 	}
 
+
 	@Test(priority=4)
 	public void MultiCitySearch() {
 		SearchFlightPage sp = new SearchFlightPage();
+		sp.redirect();
 		sp.setFlightType(FlightType.MultiCity);
 		sp.setDepartureCitiesField("Washington, D.C.");
 		sp.setArrivalCitiesField("London");
-		sp.setDepartureDateField("2022", "7", "28");
-		sp.setReturnDateField("2022", "7", "31");
+		sp.setDepartureDateField("2022", "8", "14");
+		sp.setReturnDateField("2022", "8", "28");
 		sp.setPassengerAndClassField(TravelClass.Premium_Economy);
 		sp.clickSearchButton();
 		int num_search = SearchFlightPage.getSearchResultsLength(DriverUtils.getDriver());

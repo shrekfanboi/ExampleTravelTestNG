@@ -3,6 +3,7 @@ package com.automation.Generic;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Set;
 import java.util.UUID;
 
@@ -17,36 +18,80 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.safari.SafariDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+
+
+
 
 public class DriverUtils {
 
 	private static WebDriver driver;
 
 	public static void createWebDriver() {
-		WebDriverManager.chromedriver().setup(); //external maven dependency
-		//if above does not work, uncomment and execute the following code
-//		System.setProperty("webdriver.chrome.driver","./driver/chromedriver.exe");
+		WebDriverManager.chromedriver().setup(); 
 		driver = new ChromeDriver();
 	}
-
-	/**
-	 * Use this overloaded form to pass chrome options
-	 * @param args string options
-	 * 
-	 */
-	public static void createWebDriver(String... args) {
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments(args);
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver(options);
+	public static void createWebDriver(String browser,String...args) {
+		Browser browserType = Browser.valueOf(browser);
+		args = resolveBrowserOptions(args,browserType);
+		switch(browserType) {
+		case Chrome:
+			ChromeOptions chrome_options = new ChromeOptions();
+			chrome_options.addArguments(args);
+			WebDriverManager.chromedriver().setup(); 
+			driver  = new ChromeDriver(chrome_options);
+			break;
+		case Firefox:
+			FirefoxOptions firefox_options = new FirefoxOptions();
+			firefox_options.addArguments(args);
+			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver(firefox_options);
+			break;
+		case Edge:
+			EdgeOptions edge_options = new EdgeOptions();
+			edge_options.addArguments(args);
+			WebDriverManager.edgedriver().setup();
+			driver = new EdgeDriver(edge_options);
+			break;
+		case Opera:
+			WebDriverManager.safaridriver().setup();
+			driver = new SafariDriver();
+			break;
+		case Safari:
+			WebDriverManager.safaridriver().setup();
+			driver = new SafariDriver();
+			break;
+		default:
+			break;
+		}
 	}
+
+
+	
 
 	public static WebDriver getDriver() {
 		if (driver == null)
 			createWebDriver();
 		return driver;
+	}
+	
+	public static String[] resolveBrowserOptions(String[] args,Browser  browser){
+		switch(browser) {
+		case Chrome:
+			args = Arrays.stream(args).filter(e->!e.isEmpty()).map(e->"--"+e).toArray(String[]::new);
+		case Firefox:
+		case Edge:
+			args = Arrays.stream(args).filter(e->!e.isEmpty()).map(e->"-"+e).toArray(String[]::new);
+		default:
+			break;
+		}
+		return args;
 	}
 	
 
@@ -114,5 +159,6 @@ public class DriverUtils {
 			e.printStackTrace();
 		}
 	}
+	
 
 }

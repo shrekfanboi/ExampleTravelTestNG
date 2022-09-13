@@ -1,31 +1,31 @@
 package com.automation.Test;
 
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import com.automation.Generic.PropertyReader;
+import com.automation.Generic.DriverUtils;
 import com.automation.Pages.RegisterPage;
 
 public class RegisterTest extends BaseTest {
+	
 	@Test(priority = 1)
-	public void registerWithValidData() {
+	@Parameters({"username","password"})
+	public void registerWithValidData(String username,String password) {
 		RegisterPage rp = new RegisterPage();
 		rp.clickSignup();
-		rp.enterName(PropertyReader.getProperty("fullname"));
-		rp.enterEmail(PropertyReader.getProperty("email"));
-		rp.enterAddress(PropertyReader.getProperty("address"));
-		rp.enterTelephone(PropertyReader.getProperty("telephone"));
-//		rp.clickContinue(); <- did not work for me
+		rp.enterName(username);
+		rp.enterEmail(DriverUtils.ReadExcelData("./src/test/resources/testData/sample.xlsx", "Sheet2", 1, 1));
+		rp.enterAddress(DriverUtils.ReadExcelData("./src/test/resources/testData/sample.xlsx", "Sheet2", 1, 2));
+		rp.enterTelephone(DriverUtils.ReadExcelData("./src/test/resources/testData/sample.xlsx", "Sheet2", 1, 3));
 		rp.clickFlexibleContinue();
 		rp.selectAge("young");
 		rp.selectGender("male");
 		rp.selectemp("retired");
-//		rp.clickedContinue(); <- did not work for me
 		rp.clickFlexibleContinue();
-		rp.selectProfile(PropertyReader.getProperty("profile"));
-		rp.enterPassword(PropertyReader.getProperty("password"));
-		rp.RenterPassword(PropertyReader.getProperty("repassword"));
+		rp.selectProfile(DriverUtils.ReadExcelData("./src/test/resources/testData/sample.xlsx", "Sheet2", 1, 5));
+		rp.enterPassword(password);
+		rp.RenterPassword(password);
 		rp.clickSubmit();
 		rp.clickedaccept();
 	}
-
 }
