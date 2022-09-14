@@ -9,7 +9,7 @@ public class Listener implements ITestListener {
 		
 	@Override
 	public void onTestSkipped(ITestResult result) {
-		System.out.println("Test Case "+result.getName()+" was skipped");
+		System.out.println("Test Case "+result.getName().toUpperCase()+" was skipped");
 	}
 	
 	@Override
@@ -19,8 +19,8 @@ public class Listener implements ITestListener {
 	}
 	@Override
 	public void onStart(ITestContext context) {
-		if(context.getName().contains("_")) System.out.println("Test "+context.getName().split("_")[0]+" started");
-		else  System.out.println("Test "+context.getName()+" started");
+		if(context.getName().contains("_")) System.out.println("Test "+context.getName().split("_")[0].toUpperCase()+" started");
+		else  System.out.println("Test "+context.getName().toUpperCase()+" started");
 		try {
 			ScreenRecorderUtil.startRecording("myRecording");
 		} catch (Exception e) {
@@ -29,8 +29,8 @@ public class Listener implements ITestListener {
 	}
 	@Override
 	public void onFinish(ITestContext context) {
-		if(context.getName().contains("_")) System.out.println("Test "+context.getName().split("_")[0]+" finished");
-		else System.out.println("Test "+context.getName()+" finished");
+		if(context.getName().contains("_")) System.out.println("Test "+context.getName().split("_")[0].toUpperCase()+" finished");
+		else System.out.println("Test "+context.getName().toUpperCase()+" finished");
 		try {
 			ScreenRecorderUtil.stopRecording();
 		} catch (Exception e) {
@@ -39,11 +39,11 @@ public class Listener implements ITestListener {
 	}
 	@Override  
 	public void onTestSuccess(ITestResult result) {  
-	System.out.println("Test  Case "+result.getName()+" has suceeded");  
+	System.out.println("Test  Case "+result.getName().toUpperCase()+" has suceeded");  
 	}  
 	@Override
 	public void onTestFailure(ITestResult result) {
-		System.out.println("Test Case "+result.getName()+" has failed");
+		System.out.println("Test Case "+result.getName().toUpperCase()+" has failed");
 		System.out.println(result.getThrowable().getMessage());
 		DriverUtils.CaptureScreenShot();
 	}

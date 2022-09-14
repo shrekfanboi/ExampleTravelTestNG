@@ -2,6 +2,10 @@ package com.automation.Test;
 
 import static org.testng.Assert.assertEquals;
 
+import java.time.Duration;
+
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import com.automation.Generic.DriverUtils;
@@ -40,8 +44,9 @@ public class BookingTest extends BaseTest{
 	@Test(retryAnalyzer = RetryAnalyzer.class,alwaysRun = true)
 	public void loadSearchPage() throws InterruptedException {
 		new SearchFlightPage().redirect();
-		DriverUtils.getDriver().navigate().refresh();
+		new WebDriverWait(DriverUtils.getDriver(), Duration.ofSeconds(10)).until(ExpectedConditions.urlContains("http"));
 		assertEquals(DriverUtils.getDriver().getCurrentUrl(), "https://travel.testsigma.com/");
+		DriverUtils.getDriver().navigate().refresh();
 	}
 
 }

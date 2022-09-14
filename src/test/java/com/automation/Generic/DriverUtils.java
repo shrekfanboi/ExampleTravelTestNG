@@ -44,24 +44,38 @@ public class DriverUtils {
 		case Chrome:
 			ChromeOptions chrome_options = new ChromeOptions();
 			chrome_options.addArguments(args);
-			WebDriverManager.chromedriver().setup(); 
-			driver  = new ChromeDriver(chrome_options);
+			try {
+				System.setProperty("webdriver.gecko.driver", "./src/test/resources/driver/chromedriver.exe");
+				driver = new ChromeDriver(chrome_options);
+			}
+			catch(IllegalStateException e) {
+				WebDriverManager.chromedriver().setup(); 
+				driver  = new ChromeDriver(chrome_options);
+			}
 			break;
 		case Firefox:
 			FirefoxOptions firefox_options = new FirefoxOptions();
 			firefox_options.addArguments(args);
-			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver(firefox_options);
+			try {
+				System.setProperty("webdriver.gecko.driver", "./src/test/resources/driver/geckodriver.exe");
+				driver = new FirefoxDriver(firefox_options);				
+			}
+			catch(IllegalStateException e) {
+				WebDriverManager.firefoxdriver().setup();
+				driver = new FirefoxDriver(firefox_options);
+			}
 			break;
 		case Edge:
 			EdgeOptions edge_options = new EdgeOptions();
 			edge_options.addArguments(args);
-			WebDriverManager.edgedriver().setup();
-			driver = new EdgeDriver(edge_options);
-			break;
-		case Opera:
-			WebDriverManager.safaridriver().setup();
-			driver = new SafariDriver();
+			try {
+				System.setProperty("webdriver.edge.driver", "./src/test/resources/driver/msedgedriver.exe");
+				driver = new EdgeDriver(edge_options);
+			}
+			catch(IllegalStateException e) {
+				WebDriverManager.edgedriver().setup();
+				driver = new EdgeDriver(edge_options);				
+			}
 			break;
 		case Safari:
 			WebDriverManager.safaridriver().setup();

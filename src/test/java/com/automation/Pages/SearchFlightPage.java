@@ -67,7 +67,6 @@ public class SearchFlightPage extends BasePage {
 
 	public void redirect() {
 		if (!this.driver.getCurrentUrl().contains("travel.testsigma.com")) {
-//			System.out.println("switching tabs");
 			JavascriptExecutor js = (JavascriptExecutor)driver;
 			js.executeScript("arguments[0].scrollIntoView()", this.navBtn);
 			this.navBtn.click();
