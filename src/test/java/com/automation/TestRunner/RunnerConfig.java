@@ -113,7 +113,6 @@ public class RunnerConfig {
 			if (!nTests.isEmpty())
 				tests.set(order - 1, nTests);
 		}
-		tests.stream().flatMap(test -> test.stream()).toList();
 		for (XmlTest test : tests.stream().flatMap(test -> test.stream()).toList()) {
 			test.setXmlSuite(suite);
 			suite.addTest(test);

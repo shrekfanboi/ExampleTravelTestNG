@@ -529,7 +529,9 @@ public class App {
 				if (currentSelect == null)
 					return;
 				else {
-					String test = currentSelect.getLastPathComponent().toString();
+					DefaultMutableTreeNode node =  (DefaultMutableTreeNode) currentSelect.getLastPathComponent();
+					String test = node.toString();
+					int currentSelectIndex = treeModel.getIndexOfChild(suiteNode, node);
 					testConsole.setText("");
 					if (test.equals("suite")) {
 						Thread t1 = new Thread() {
@@ -560,14 +562,9 @@ public class App {
 							}
 						};
 						t1.start();
-//						try {
-//							t1.join(0);
-//						} catch (InterruptedException e1) {
-//							e1.printStackTrace();
-//						}
 						return;
 					}
-					Map<String, Object> testMap = tests.stream().filter(i -> i.get("testname").toString().contains(test)).findFirst()
+					Map<String, Object> testMap = tests.stream().filter(i -> i.get("testname").toString().contains(test) && tests.indexOf(i) == currentSelectIndex).findFirst()
 							.get();
 					String testClass = testMap.get("testclass").toString();
 					int testRun = Integer.parseInt(testMap.get("testcount").toString());
@@ -596,11 +593,6 @@ public class App {
 						}
 					};
 					t2.start();
-//					try {
-//						t2.join(0);
-//					} catch (InterruptedException err) {
-//						err.printStackTrace();
-//					}
 				}
 			}
 		});

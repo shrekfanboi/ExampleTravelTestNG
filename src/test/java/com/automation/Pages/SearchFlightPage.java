@@ -79,16 +79,16 @@ public class SearchFlightPage extends BasePage {
 		JavascriptExecutor  js = (JavascriptExecutor)this.driver;
 		if (type.equals(FlightType.OneWay))
 		{
-			js.executeScript("arguments[0].scrollIntoViewIfNeeded();window.scrollBy(0,-80);", this.oneWay);
+			js.executeScript("arguments[0].scrollIntoView();window.scrollBy(0,-80);", this.oneWay);
 			this.oneWay.click();			
 		}
 		else if (type.equals(FlightType.RoundTrip)) {
-			js.executeScript("arguments[0].scrollIntoViewIfNeeded();window.scrollBy(0,-80);", this.roundTrip);
+			js.executeScript("arguments[0].scrollIntoView();window.scrollBy(0,-80);", this.roundTrip);
 			System.out.println(this.roundTrip.isDisplayed());
 			this.roundTrip.click();
 		}
 		else {
-			js.executeScript("arguments[0].scrollIntoViewIfNeeded();window.scrollBy(0,-80);", this.multiCity);
+			js.executeScript("arguments[0].scrollIntoView();window.scrollBy(0,-80);", this.multiCity);
 			this.multiCity.click();
 		}
 	}
